@@ -35,8 +35,8 @@ export class SubService {
     }
   }
 
-  removeTodo(todo : Itodo){
-    let getindex = this.todoArr.findIndex(todo => todo.todoId === todo.todoId)
+  removeTodo(remtodo : Itodo){
+    let getindex = this.todoArr.findIndex(todo => todo.todoId === remtodo.todoId)
     this.todoArr.splice(getindex,1)
   }
 }
