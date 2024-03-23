@@ -1,0 +1,15 @@
+
+<h2 class="bg-primary text-center p-3 text-white">To Do List</h2>
+<ul class="list-group" *ngIf="todoArr.length>0; else noArr">
+    <li class="list-group-item d-flex justify-content-between my-2" *ngFor="let item of todoArr; index as i">
+        {{item.todoItem}}
+
+        <span>
+            <button class="btn btn-info mr-3" (click)="onEdit(item)">Edit</button>
+            <button class="btn btn-danger" (click)="onDelete(item)">Delete</button>
+        </span>
+    </li>
+</ul>
+<ng-template #noArr>
+    <p class="alert alert-info p-3">No Items added yet</p>
+</ng-template>
