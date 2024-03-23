@@ -1,0 +1,23 @@
+<h3 class="bg-light text-center p-3">Student Form</h3>
+<form [formGroup]="stdForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="stdfname">Student First Name</label>
+        <input type="text" formControlName="stdfname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="stdlname">Student Last Name</label>
+        <input type="text" formControlName="stdlname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email">Student Email</label>
+        <input type="text" formControlName="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="contact">Student Contact</label>
+        <input type="text" formControlName="contact" class="form-control">
+    </div>
+    <div class="text-right">
+        <button class="btn btn-outline-success" *ngIf="!isEditMode">Add Student</button>
+        <button class="btn btn-outline-warning" *ngIf="isEditMode" (click)="stdUpdate()">Update Student</button>
+    </div>
+</form>

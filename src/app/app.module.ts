@@ -6,17 +6,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoformComponent } from './components/todoform/todoform.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StdformComponent } from './components/stdform/stdform.component';
+import { StdlistComponent } from './components/stdlist/stdlist.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoformComponent,
-    TodolistComponent
+    TodolistComponent,
+    StdformComponent,
+    StdlistComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

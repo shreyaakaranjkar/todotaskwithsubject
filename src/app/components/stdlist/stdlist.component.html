@@ -1,0 +1,35 @@
+<h3 class="bg-light p-3 text-center">Student List</h3>
+<hr>
+<table class="table table-bordered table-responsive" *ngIf="stdArr.length>0; else noStudents">
+    <thead>
+    <tr>
+        <th>Sr No</th>
+        <th>Student First Name</th>
+        <th>Student Last Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let std of stdArr; index as i">
+        <td> {{i+1}}</td>
+        <td>{{std.stdfname}}</td>
+        <td>{{std.stdlname}}</td>
+        <td>{{std.email}}</td>
+        <td>{{std.contact}}</td>
+        <td>
+            <span>
+                <button class="btn btn-info" (click)="gotoEdit(std)">Edit</button>
+                <button class="btn btn-danger" (click)="removeStd(std)">Delete</button>
+            </span>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+<ng-template #noStudents>
+    <p class="alert alert-info">
+        No Students Added Yet!!
+    </p>
+</ng-template>
+
